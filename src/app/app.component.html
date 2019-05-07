@@ -1,0 +1,22 @@
+<hello name="{{ name }}"></hello>
+<div *ngIf="employeesAvailable()" style="margin: 20px" class="container container-fluid">
+    <div>
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                </tr>
+            </thead>
+            <tbody  *ngFor="let employee of employees">
+                <tr>
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.firstName}}</td>
+                    <td>{{employee.lastName}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <input type="button" (click)="createEmployee()" value="Create New" class="btn btn-primary">
+</div>
