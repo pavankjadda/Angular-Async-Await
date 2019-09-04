@@ -1,8 +1,0 @@
-{
-    "version": "2.0.0",
-    "tasks": [{
-        "label": "start json server",
-        "command": "json-server --watch db.json",
-        "type": "shell"
-    }]
-}
