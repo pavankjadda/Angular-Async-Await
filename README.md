@@ -1,4 +1,4 @@
-# Synchronous HTTP calls in Angular 7 using Async and Await
+# Synchronous HTTP calls in Angular 8 using Async and Await
 ---
 
 Observables in Angular offer significant benefits over other techniques for event handling, asynchronous programming, and handling multiple values. But some times we may want to wait for the response from previous HTTP call or load default settings for an application. In that case, we use Async and Await functions to achieve this. 
@@ -15,7 +15,7 @@ async method()
 1. Angular 7
 2. json-server (to mock Rest API)
 
-# Synchronous HTTP call in Angular 7
+# Synchronous HTTP call in Angular 8
 1. json-server helps to mock the backend REST API and stores entered data. In this application, we demonstrate a simple use case with two operations, create new employee and fetch a list of employees
 First, create db.json file, that holds employee information
 ```
