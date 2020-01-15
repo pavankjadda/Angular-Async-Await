@@ -12,7 +12,7 @@ async method()
 }
 ```
 ## Technologies
-1. Angular 7
+1. Angular 8
 2. json-server (to mock Rest API)
 
 # Synchronous HTTP call in Angular 8
