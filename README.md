@@ -52,7 +52,7 @@ First, create db.json file, that holds employee information
     ```
 3. start json-server by executing following command on project root folder
     ```
-    $ json-server -- watch db.json
+    $ json-server --watch db.json
     ```
 4. Now that, backend mock REST Api server is available, let's build front end. In order for async to work, both component method and service method should annotate with async and await.
 **app.component.ts**
