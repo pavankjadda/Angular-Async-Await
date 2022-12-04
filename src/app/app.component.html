@@ -1,22 +1,32 @@
+<div class='mat-elevation-z16' style='margin: 20px;padding: 20px'>
+	<table [dataSource]='dataSource' mat-table>
+		<!-- ID Column -->
+		<ng-container matColumnDef='id'>
+			<th *matHeaderCellDef mat-header-cell> ID</th>
+			<td *matCellDef='let element' mat-cell> {{element.id}} </td>
+		</ng-container>
 
-<div *ngIf="employeesAvailable()" style="margin: 20px" class="container container-fluid">
-    <div>
-        <table class="table table-responsive">
-            <thead>
-                <tr>
-                    <td>Id</td>
-                    <td>First Name</td>
-                    <td>Last Name</td>
-                </tr>
-            </thead>
-            <tbody  *ngFor="let employee of employees">
-                <tr>
-                    <td>{{employee.id}}</td>
-                    <td>{{employee.firstName}}</td>
-                    <td>{{employee.lastName}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <input type="button" (click)="createEmployee()" value="Create New" class="btn btn-primary">
+		<!-- First Name Column -->
+		<ng-container matColumnDef='firstName'>
+			<th *matHeaderCellDef mat-header-cell> Name</th>
+			<td *matCellDef='let element' mat-cell> {{element.firstName}} </td>
+		</ng-container>
+
+		<!-- Last Name Column -->
+		<ng-container matColumnDef='lastName'>
+			<th *matHeaderCellDef mat-header-cell> Weight</th>
+			<td *matCellDef='let element' mat-cell> {{element.lastName}} </td>
+		</ng-container>
+
+		<tr *matHeaderRowDef='displayedColumns' mat-header-row></tr>
+		<tr *matRowDef='let row; columns: displayedColumns;' mat-row></tr>
+	</table>
+
+	<mat-paginator [pageSizeOptions]='[5, 10, 20, 50, 100]' pageSize='5'
+								 showFirstLastButtons>
+	</mat-paginator>
+
+	<button (click)='createEmployee()' color='primary' mat-raised-button style='margin-top: 20px' type='button'>
+		Create New
+	</button>
 </div>

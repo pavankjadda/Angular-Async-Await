@@ -1,0 +1,4 @@
+/dist
+.angular
+src/assets/css/vendor
+/src/app/app.component.html
