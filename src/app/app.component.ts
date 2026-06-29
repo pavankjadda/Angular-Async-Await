@@ -2,17 +2,16 @@ import { AfterViewInit, Component, inject, OnInit, ViewChild } from '@angular/co
 import { EmployeeService } from './service/employee.service';
 import { API_URL } from './app.constants';
 import { Employee } from './model/employee';
-import { NgForOf, NgIf } from '@angular/common';
+
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-	standalone: true,
-	selector: 'my-app',
+	selector: 'app-root',
 	templateUrl: './app.component.html',
-	imports: [NgForOf, NgIf, MatTableModule, MatPaginatorModule, MatButtonModule],
+	imports: [MatTableModule, MatPaginatorModule, MatButtonModule],
 })
 export class AppComponent implements OnInit, AfterViewInit {
 	@ViewChild(MatPaginator) paginator: MatPaginator;
@@ -32,26 +31,26 @@ export class AppComponent implements OnInit, AfterViewInit {
 	}
 
 	getEmployees() {
-		let url = API_URL + 'employees';
+		const url = API_URL + 'employees';
 		this.employeeService.getEmployees(url).subscribe(
 			(data) => {
 				this.dataSource = new MatTableDataSource<Employee>(data);
 				this.dataSource.paginator = this.paginator;
 			},
-			(error1) => {
+			() => {
 				console.log('Error');
 			}
 		);
 	}
 
 	async createEmployee() {
-		let url = API_URL + 'employees';
-		let employee = new Employee();
+		const url = API_URL + 'employees';
+		const employee = new Employee();
 		employee.id = Math.floor(Math.random() * 10000);
 		employee.firstName = 'John';
 		employee.lastName = 'McCain' + employee.id;
 
-		let createdEmployee = await this.employeeService.createEmployee(url, employee);
+		const createdEmployee = await this.employeeService.createEmployee(url, employee);
 		console.log('Created Employee: ' + createdEmployee);
 		this.getEmployees();
 	}
