@@ -1,5 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { firstValueFrom } from 'rxjs';
 import { Employee } from '../model/employee';
 
 @Injectable({
@@ -13,6 +14,6 @@ export class EmployeeService {
 	}
 
 	async createEmployee(url: string, employee: Employee) {
-		return await this.httpClient.post(url, employee).toPromise();
+		return await firstValueFrom(this.httpClient.post(url, employee));
 	}
 }

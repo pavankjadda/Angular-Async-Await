@@ -1,23 +1,20 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": "./",
-    "downlevelIteration": true,
-    "importHelpers": true,
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "module": "es2020",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "es2020",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ]
-  }
-  }
+	"compileOnSave": false,
+	"compilerOptions": {
+		"baseUrl": "./",
+		"importHelpers": true,
+		"outDir": "./dist/out-tsc",
+		"esModuleInterop": true,
+		"sourceMap": true,
+		"declaration": false,
+		"module": "es2022",
+		"moduleResolution": "bundler",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"target": "es2022",
+		"strictPropertyInitialization": false,
+		"ignoreDeprecations": "6.0",
+		"typeRoots": ["node_modules/@types"],
+		"lib": ["es2022", "dom"]
+	}
+}
